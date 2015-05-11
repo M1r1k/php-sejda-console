@@ -1,0 +1,24 @@
+{
+    "name": "m1r1k/php-sejda-console",
+    "description": "A slim PHP wrapper around Sejda Console with an easy to use and clean OOP interface",
+    "keywords": ["pdf", "sejda", "sejda-console", "merge pdf", "wkhtmltopdf" ],
+    "homepage": "https://github.com/M1r1k/php-sejda-console/",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Artem Miroshnyk",
+            "email": "miroshnik1992@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.0.0",
+        "mikehaertl/php-tmpfile": "1.0.*",
+        "mikehaertl/php-shellcommand": "1.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "m1r1k\\SejdaConsole\\": "src/"
+        }
+    }
+}
