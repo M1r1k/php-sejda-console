@@ -114,7 +114,7 @@ class Sejda {
    */
   public function addPdf($pdf) {
     $this->_objects[] = array(
-      'key' => '-f',
+      'key' => '--files',
       'value' => $pdf,
     );
     return $this;
@@ -131,7 +131,7 @@ class Sejda {
    */
   public function addDirectories($directory = array()) {
     $this->_objects[] = array(
-      'key' => '-o',
+      'key' => '--directory',
       'value' => $directory,
     );
     return $this;
@@ -228,7 +228,7 @@ class Sejda {
     foreach ($this->_objects as $object) {
       $command->addArg($object['key'], $object['value']);
     }
-    $command->addArg($fileName, NULL, TRUE);
+    $command->addArg('--output', $fileName, TRUE);
     if (!$command->execute()) {
       $this->_error = $command->getError();
       if (!(file_exists($fileName) && filesize($fileName) !== 0 && $this->ignoreWarnings)) {
