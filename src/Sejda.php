@@ -226,7 +226,7 @@ class Sejda {
 
     $command->addArg('merge');
     foreach ($this->_objects as $object) {
-      $command->addArg($object['key'], $object['value']);
+      $command->addArg($object['key'], $object['value'], TRUE);
     }
     $command->addArg('--output', $fileName, TRUE);
     if (!$command->execute()) {
