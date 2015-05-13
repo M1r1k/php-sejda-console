@@ -225,6 +225,14 @@ class Sejda {
     $fileName = $this->getPdfFilename();
 
     $command->addArg('merge');
+    foreach ($this->_options as $key => $option) {
+      if (is_int($key)) {
+        $command->addArg($option);
+      }
+      else {
+        $command->addArg($key, $option, TRUE);
+      }
+    }
     foreach ($this->_objects as $object) {
       $command->addArg($object['key'], $object['value'], TRUE);
     }
